@@ -46,4 +46,17 @@ ValueError: Expecting a numpy.int32 array, got int64 instead.
 
 (pyvista-issue16-0) C:\devapps\projects\pyvista-issue16
 $ conda env export > env-frozen.yml
+
+(pyvista-issue16-0) kinverarity C:\devapps\projects\pyvista-issue16
+$ python
+Python 3.6.5 | packaged by conda-forge | (default, Apr  6 2018, 16:13:16) [MSC v.1900 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import pyvista
+>>> pyvista.ID_TYPE
+<class 'numpy.int64'>
+>>> import vtk
+>>> vtk.VTK_ID_TYPE
+12
+>>> vtk.vtkCommonCore.vtkIdTypeArray().GetDataTypeSize()
+4
 ```
